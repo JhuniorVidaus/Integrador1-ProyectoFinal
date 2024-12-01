@@ -80,7 +80,7 @@
                             <th>ID</th>
                             <th>Nombres</th>
                             <th>Usuario</th>
-                            <th style="display:none">Contraseña</th>
+                            <th>Contraseña</th>
                             <th>Rol</th>
                             <th>Acciones</th>
                         </tr>
@@ -91,7 +91,7 @@
                                 <td>${em.getId_empleado()}</td>
                                 <td>${em.getNombre()}</td>
                                 <td>${em.getUsuario()}</td>
-                                <td style="display:none">${em.getContraseña()}</td>
+                                <td>${em.getContraseña()}</td>
                                 <td>${em.getRol()}</td>
                                 <td>
                                     <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Modificar&id=${em.getId_empleado()}">Modificar</a>
