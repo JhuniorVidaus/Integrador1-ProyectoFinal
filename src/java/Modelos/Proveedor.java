@@ -1,5 +1,9 @@
 package Modelos;
 
+/**
+ * Esta clase representa la información de un proveedor.
+ */
+
 public class Proveedor {
     
     int id_proveedor;

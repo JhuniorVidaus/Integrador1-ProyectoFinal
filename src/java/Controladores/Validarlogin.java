@@ -21,7 +21,7 @@ public class Validarlogin extends HttpServlet {
     
     EmpleadoDAO edao=new EmpleadoDAO();
     Empleado em=new Empleado();
-    
+            
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -74,16 +74,16 @@ public class Validarlogin extends HttpServlet {
                 request.getSession().setAttribute("usuario", em.getUsuario());
                 request.getSession().setAttribute("idemp", em.getId_empleado());
                 request.getSession().setAttribute("rol", em.getRol());
-                request.getSession().setAttribute("nombreEmpleado", em.getNombre());
+                request.getSession().setAttribute("nombreEmpleado", em.getNombre());              
                 response.sendRedirect("paneladmin.jsp");
-            } else {
+            } else {    
                 response.sendRedirect("loginadmin.jsp");
             }
         } else if (menu.equalsIgnoreCase("salir")) {
             request.getSession().removeAttribute("usuario");
             request.getSession().removeAttribute("idemp");
             request.getSession().removeAttribute("rol");
-            request.getSession().removeAttribute("nombreEmpleado");
+            request.getSession().removeAttribute("nombreEmpleado");      
             response.sendRedirect("loginadmin.jsp");
         } else {
             response.sendRedirect("loginadmin.jsp");

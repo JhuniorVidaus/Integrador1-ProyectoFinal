@@ -9,11 +9,21 @@ import java.util.List;
 
 public class PedidoDAO {
     
-    ConexionBD cn=new ConexionBD();
+    // Instancia de la clase ConexionBD para manejar la conexión a la base de datos
+    ConexionBD cn = new ConexionBD();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
     
+    /**
+     * Obtiene todos los pedidos registrados en la base de datos.
+     * 
+     * Realiza una consulta que obtiene el ID del pedido, el nombre y correo del cliente,
+     * los productos comprados (con su cantidad), la fecha de la venta, el monto total
+     * y el estado del pedido.
+     * 
+     * @return Una lista de objetos Pedido con la información de todos los pedidos.
+     */
     public List<Pedido> obtenerPedidos() {
         List<Pedido> pedidos = new ArrayList<>();
         try {
@@ -32,24 +42,34 @@ public class PedidoDAO {
 
             while (rs.next()) {
                 Pedido pedido = new Pedido();
-                pedido.setIdPedido(rs.getInt("idPedido"));
-                pedido.setNombreCliente(rs.getString("nombreCliente"));
-                pedido.setCorreo(rs.getString("correo"));
-                pedido.setNombreProductos(rs.getString("nombreProductos"));
-                pedido.setFecha(rs.getString("fecha"));
-                pedido.setMonto(rs.getDouble("monto"));
-                pedido.setEstado(rs.getString("estado"));
-                pedidos.add(pedido);
+                pedido.setIdPedido(rs.getInt("idPedido"));           // Establece el ID del pedido
+                pedido.setNombreCliente(rs.getString("nombreCliente")); // Establece el nombre del cliente
+                pedido.setCorreo(rs.getString("correo"));             // Establece el correo del cliente
+                pedido.setNombreProductos(rs.getString("nombreProductos")); // Establece los productos y sus cantidades
+                pedido.setFecha(rs.getString("fecha"));               // Establece la fecha del pedido
+                pedido.setMonto(rs.getDouble("monto"));               // Establece el monto total del pedido
+                pedido.setEstado(rs.getString("estado"));             // Establece el estado del pedido
+                pedidos.add(pedido); // Añade el pedido a la lista
             }
             rs.close();
             ps.close();
             con.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // Se recomienda manejar excepciones adecuadamente
         }
-        return pedidos;
+        return pedidos; // Devuelve la lista de pedidos
     }
     
+    /**
+     * Obtiene los pedidos de un cliente específico.
+     * 
+     * Realiza una consulta similar a la de `obtenerPedidos()`, pero filtrando por el ID del cliente.
+     * Obtiene el ID del pedido, el nombre y correo del cliente, los productos comprados (con su cantidad),
+     * la fecha de la venta, el monto total y el estado del pedido para un cliente determinado.
+     * 
+     * @param idCliente El ID del cliente cuyos pedidos se desean obtener.
+     * @return Una lista de objetos Pedido con la información de los pedidos del cliente.
+     */
     public List<Pedido> obtenerPedidosPorCliente(int idCliente) {
         List<Pedido> pedidos = new ArrayList<>();
         try {
@@ -65,27 +85,26 @@ public class PedidoDAO {
                     + "GROUP BY pv.id_pedido, c.nombre, c.correo, pv.fecha, pg.monto, pv.estado";
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
-            ps.setInt(1, idCliente);
+            ps.setInt(1, idCliente); // Establece el ID del cliente para filtrar los resultados
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 Pedido pedido = new Pedido();
-                pedido.setIdPedido(rs.getInt("idPedido"));
-                pedido.setNombreCliente(rs.getString("nombreCliente"));
-                pedido.setCorreo(rs.getString("correo"));
-                pedido.setNombreProductos(rs.getString("nombreProductos"));
-                pedido.setFecha(rs.getString("fecha"));
-                pedido.setMonto(rs.getDouble("monto"));
-                pedido.setEstado(rs.getString("estado"));
-                pedidos.add(pedido);
+                pedido.setIdPedido(rs.getInt("idPedido"));           // Establece el ID del pedido
+                pedido.setNombreCliente(rs.getString("nombreCliente")); // Establece el nombre del cliente
+                pedido.setCorreo(rs.getString("correo"));             // Establece el correo del cliente
+                pedido.setNombreProductos(rs.getString("nombreProductos")); // Establece los productos y sus cantidades
+                pedido.setFecha(rs.getString("fecha"));               // Establece la fecha del pedido
+                pedido.setMonto(rs.getDouble("monto"));               // Establece el monto total del pedido
+                pedido.setEstado(rs.getString("estado"));             // Establece el estado del pedido
+                pedidos.add(pedido); // Añade el pedido a la lista
             }
             rs.close();
             ps.close();
             con.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // Se recomienda manejar excepciones adecuadamente
         }
-        return pedidos;
+        return pedidos; // Devuelve la lista de pedidos del cliente
     }
-
 }

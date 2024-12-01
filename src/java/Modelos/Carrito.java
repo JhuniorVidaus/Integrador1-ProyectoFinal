@@ -1,12 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelos;
 
 /**
- *
- * @author Desktop
+ * Esta clase representa un artículo en el carrito de compras.
  */
 public class Carrito {
     int item;
@@ -22,7 +17,7 @@ public class Carrito {
     }
     
    
-
+    // Constructor con parámetros para inicializar todos los atributos
     public Carrito(int item, int idProducto, String nombres, String descrpcion,String foto, double precioCompra, int cantidad, double subtotal) {
         this.item = item;
         this.idProducto = idProducto;
@@ -34,6 +29,7 @@ public class Carrito {
         this.subtotal = subtotal;
     }
 
+    // Métodos getter y setter para acceder y modificar los atributos
     public int getItem() {
         return item;
     }

@@ -1,5 +1,10 @@
 package Modelos;
 
+/**
+ * Esta clase representa el pago de un pedido. 
+ * Contiene la información del ID del pago y el monto asociado al mismo.
+ */
+
 public class Pago {
     int id;
     double monto;

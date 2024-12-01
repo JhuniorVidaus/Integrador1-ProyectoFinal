@@ -1,5 +1,11 @@
 package Modelos;
 
+/**
+ * La clase `OrdenCompra` representa una orden de compra realizada por un empleado a un proveedor.
+ * Contiene información detallada sobre el pedido, como el número de serie, las cantidades de productos solicitados,
+ * el stock inicial y final, y la descripción de la orden.
+ */
+
 public class OrdenCompra {
     
     int id_orden;

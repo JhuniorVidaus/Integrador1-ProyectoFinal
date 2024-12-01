@@ -2,6 +2,12 @@ package Modelos;
 
 import java.util.Date;
 
+/**
+ * Esta clase representa una orden de pedido. 
+ * Contiene información relevante como el número de serie, el empleado que realiza el pedido,
+ * el proveedor, el producto solicitado, la fecha del pedido y la cantidad total.
+ */
+
 public class OrdenPedido {
     private String nSerie;
     private String nombreEmpleado;

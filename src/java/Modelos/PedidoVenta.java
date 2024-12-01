@@ -2,6 +2,12 @@ package Modelos;
 
 import java.util.List;
 
+/**
+ * Esta clase representa un pedido de venta realizado por un cliente.
+ * Un pedido contiene detalles como el cliente que realiza la compra, el pago asociado, el monto, la fecha y el estado del pedido.
+ * Además, incluye una lista de productos comprados como parte del detalle del pedido.
+ */
+
 public class PedidoVenta {
     int id;
     int idcliente;

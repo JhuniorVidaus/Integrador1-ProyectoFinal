@@ -1,6 +1,8 @@
 package Modelos;
 
-import java.io.InputStream;
+/**
+ * Esta clase representa la información de un producto.
+ */
 
 public class Producto {
     

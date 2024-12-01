@@ -1,5 +1,10 @@
 package Modelos;
 
+/**
+ * La clase `Empleado` representa a un empleado en el sistema.
+ * Contiene información relacionada con el empleado, como su nombre, rol, usuario y contraseña.
+ */
+
 public class Empleado {
     
     int id_empleado;

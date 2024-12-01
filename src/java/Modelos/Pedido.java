@@ -1,5 +1,11 @@
 package Modelos;
 
+/**
+ * Esta clase representa un pedido realizado por un cliente.
+ * Un pedido incluye información sobre el cliente, los productos comprados, la fecha de realización,
+ * el monto total y el estado del pedido.
+ */
+
 public class Pedido{
     private int idPedido;
     private String nombreCliente;

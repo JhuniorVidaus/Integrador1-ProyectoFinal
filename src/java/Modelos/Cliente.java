@@ -1,5 +1,9 @@
 package Modelos;
 
+/**
+ * Esta clase representa la información de un cliente.
+ */
+
 public class Cliente {
     
     int id_cliente;
@@ -11,7 +15,7 @@ public class Cliente {
 
     public Cliente() {
     }
-
+// Constructor con parámetros para inicializar todos los atributos
     public Cliente(int id_cliente, int dni, String nombre, String dirección, String correo, String password) {
         this.id_cliente = id_cliente;
         this.dni = dni;
@@ -21,6 +25,7 @@ public class Cliente {
         this.password = password;
     }
 
+// Métodos getter y setter para acceder y modificar los atributos
     public int getId_cliente() {
         return id_cliente;
     }
