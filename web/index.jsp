@@ -213,7 +213,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="js/alertas.js" type="text/javascript"></script>
-        <script type="text/javascript" src="https://counter8.optistats.ovh/private/counter.js?c=6byl42zwr2rrsuqhjg8xf5x5rgldylzb&down=async" async></script>
-        <noscript><a href="https://www.contadorvisitasgratis.com" title="contador de visitas para mi blog"><img src="https://counter8.optistats.ovh/private/contadorvisitasgratis.php?c=6byl42zwr2rrsuqhjg8xf5x5rgldylzb" border="0" title="contador de visitas para mi blog" alt="contador de visitas para mi blog"></a></noscript>
     </body>
 </html>
