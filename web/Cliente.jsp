@@ -82,7 +82,7 @@
                             <th>Nombre</th>
                             <th>Direccion</th>
                             <th>Correo</th>
-                            <th>Password</th>
+                            <th style="display:none">Password</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -94,7 +94,7 @@
                             <td>${cl.getNombre()}</td>
                             <td>${cl.getDirección()}</td>
                             <td>${cl.getCorreo()}</td>
-                            <td>${cl.getPassword()}</td>
+                            <td style="display:none">${cl.getPassword()}</td>
                             <td>
                                 <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Modificar&idcl=${cl.getId_cliente()}">Modificar</a>
                                 <a class="btn btn-danger" href="Controlador?menu=Cliente&accion=Eliminar&idcl=${cl.getId_cliente()}">Eliminar</a>
